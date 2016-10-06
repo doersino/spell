@@ -13,11 +13,13 @@ maintainer: doersino@gmail.com
 copyright: 2016 Noah Doersing
 category: Language
 build-type: Simple
+data-files: big.txt
 cabal-version: >=1.10
 
 library
   exposed-modules:
-    Spell
+    Spell,
+    Paths_spell
   build-depends:
     base >=4.6 && <5,
     containers,

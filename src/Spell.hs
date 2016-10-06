@@ -12,6 +12,7 @@ import Data.List.Extras.Argmax
 import qualified Data.List.Ordered as Ordered
 
 import System.IO.Unsafe
+import Paths_spell
 
 -- | Note: To simulate the global variable @WORDS@ from the original Python
 -- implementation, we'll perform some unsafe IO here. Please put on your safety
@@ -20,7 +21,7 @@ import System.IO.Unsafe
 words :: Map.Map String Int
 words = Map.fromList [ (l, length l) | l <- Ordered.nub (sort words') ]
   where
-    text   = unsafePerformIO $ readFile "big.txt"
+    text   = unsafePerformIO $ getDataFileName "big.txt" >>= readFile
     words' = filter (not . null) . splitWhen (not . isAlpha) $ map toLower text
 
 -- | Probability of @word@.
