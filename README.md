@@ -31,7 +31,7 @@ For taking a first look, run `cabal repl`. Some examples:
 
 ## Notes
 
-* Performance is a bit of an issue here, so I've generated a file `small.txt` by running `cat big.txt | head -n 1000 > small.txt`. This is used by default. *If you manage to significantly improve performance or reduce dependencies without major structural modifications, please don't hesitate before filing an issue or sending a pull request.*
-* Haskell is lazy, so it won't parse the `small.txt` file until you call `correction`. As a result, the first correction might take a few seconds -- subsequent ones will be faster.
+* Performance is a bit of an issue here. *If you manage to significantly improve performance or reduce dependencies without major structural modifications, please don't hesitate before filing an issue or sending a pull request.*
+* Haskell is lazy, so it won't parse the `big.txt` file until you call `correction`. As a result, the first correction might take a few seconds -- subsequent ones will be faster.
 * If you want, you can use this Cabal package as a dependency in your project (of course, there are better spell checkers). Since it's not on Hackage, run `cabal sandbox add-source <path to local clone of spell package>` in your project directory before adding `spell` to the `build-depends` list in your `.cabal` file.
 * Run `cabal haddock` to generate documentation.

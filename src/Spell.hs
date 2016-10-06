@@ -20,7 +20,7 @@ import System.IO.Unsafe
 words :: Map.Map String Int
 words = Map.fromList [ (l, length l) | l <- Ordered.nub (sort words') ]
   where
-    text   = unsafePerformIO $ readFile "small.txt"
+    text   = unsafePerformIO $ readFile "big.txt"
     words' = filter (not . null) . splitWhen (not . isAlpha) $ map toLower text
 
 -- | Probability of @word@.
