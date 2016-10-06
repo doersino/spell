@@ -1,15 +1,18 @@
 name: spell
 version: 0.1.0.0
 synopsis: Spelling Corrector in Haskell
-description: Haskell implementation of "spell.py" by Peter Norvig: <http://norvig.com/spell-correct.html>
+description:
+  Haskell implementation of the simple spelling corrector "spell.py" by Peter
+  Norvig, which is described in detail in his article "How to Write a Spelling
+  Corrector": <http://norvig.com/spell-correct.html>
+homepage: https://github.com/doersino/spell
 license: MIT
 license-file: LICENSE
 author: Noah Doersing
 maintainer: doersino@gmail.com
-copyright: TODO
+copyright: 2016 Noah Doersing
 category: Language
 build-type: Simple
--- extra-source-files:
 cabal-version: >=1.10
 
 library
@@ -33,3 +36,4 @@ test-suite spec
     base >=4.6 && <5,
     spell,
     hspec == 2.*
+  default-language: Haskell2010

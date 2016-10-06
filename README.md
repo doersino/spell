@@ -1,6 +1,6 @@
 # Spelling Corrector in Haskell
 
-Haskell implementation of the simple spelling corrector `spell.py` by [Peter Norvig](http://norvig.com), which is described in detail [in his article "How to Write a Spelling Corrector"](http://norvig.com/spell-correct.html).
+Haskell implementation of the simple spelling corrector `spell.py` by [Peter Norvig](http://norvig.com), which he describes in detail [in the excellent article "How to Write a Spelling Corrector"](http://norvig.com/spell-correct.html). Any credit should go to him!
 
 
 ## Setup
