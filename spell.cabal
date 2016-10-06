@@ -3,7 +3,7 @@ version: 0.1.0.0
 synopsis: Spelling Corrector in Haskell
 description:
   Haskell implementation of the simple spelling corrector "spell.py" by Peter
-  Norvig, which is described in detail in his article "How to Write a Spelling
+  Norvig, which is described in detail in his essay "How to Write a Spelling
   Corrector": <http://norvig.com/spell-correct.html>
 homepage: https://github.com/doersino/spell
 license: MIT
