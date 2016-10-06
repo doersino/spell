@@ -34,9 +34,14 @@ correction :: String -> String
 correction word = argmax p $ Set.toList $ candidates word
 
 -- | Generate possible spelling corrections for @word@.
--- TODO fix
 candidates :: String -> Set.Set String
-candidates word = Set.unions [known [word], known $ Set.toList $ edits1 word, known $ Set.toList $ edits2 word, Set.singleton word]
+candidates word = head $ filter (not . Set.null) ors
+  where
+    ors = [ known [word]
+           , known $ Set.toList $ edits1 word
+           , known $ Set.toList $ edits2 word
+           , Set.singleton word
+           ]
 
 -- | The subset of @words'@ that appear in the dictionary of @words@.
 known :: [String] -> Set.Set String
@@ -48,9 +53,9 @@ edits1 word = Set.fromList $ deletes ++ transposes ++ replaces ++ inserts
   where
     letters    = "abcdefghijklmnopqrstuvwxyz"
     splits     = [ splitAt i word                  | i <- [1 .. length word] ]
-    deletes    = [ l ++ drop 1 r                   | (l,r) <- splits, not (null r) ]
+    deletes    = [ l ++ tail r                     | (l,r) <- splits, not (null r) ]
     transposes = [ l ++ r !! 1 : head r : drop 2 r | (l,r) <- splits, length r > 1 ]
-    replaces   = [ l ++ c : drop 1 r               | (l,r) <- splits, not (null r), c <- letters ]
+    replaces   = [ l ++ c : tail r                 | (l,r) <- splits, not (null r), c <- letters ]
     inserts    = [ l ++ c : r                      | (l,r) <- splits, c <- letters]
 
 -- | All edits that are two edits away from @word@.
