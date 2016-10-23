@@ -24,8 +24,7 @@ library
     base >=4.6 && <5,
     containers,
     split,
-    list-extras,
-    data-ordlist
+    list-extras
   hs-source-dirs: src
   default-language: Haskell2010
 

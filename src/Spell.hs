@@ -9,7 +9,6 @@ import qualified Data.Set as Set
 
 import Data.List.Split
 import Data.List.Extras.Argmax
-import qualified Data.List.Ordered as Ordered
 
 import System.IO.Unsafe
 import Paths_spell
@@ -19,7 +18,7 @@ import Paths_spell
 -- goggles and take a few steps back.
 {-# NOINLINE words #-}
 words :: Map.Map String Int
-words = Map.fromList [ (l, length l) | l <- Ordered.nub (sort words') ]
+words = Map.fromList [ (head l, length l) | l <- group (sort words') ]
   where
     text   = unsafePerformIO $ getDataFileName "big.txt" >>= readFile
     words' = filter (not . null) . splitWhen (not . isAlpha) $ map toLower text
