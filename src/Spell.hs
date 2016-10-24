@@ -34,13 +34,13 @@ correction word = argmax p $ candidates word
 
 -- | Generate possible spelling corrections for @word@.
 candidates :: String -> [String]
-candidates word = head $ filter (not . null) ors
+candidates word = head $ filter (not . null) s
   where
-    ors = [ known [word]
-           , known $ edits1 word
-           , known $ edits2 word
-           , [word]
-           ]
+    s = [ known [word]
+        , known $ edits1 word
+        , known $ edits2 word
+        , [word]
+        ]
 
 -- | The subset of @words'@ that appear in the dictionary of @words@.
 known :: [String] -> [String]
