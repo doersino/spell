@@ -6,8 +6,8 @@ import Data.Char
 import Data.Maybe
 import qualified Data.Map.Strict as Map
 
-import Data.List.Split
-import Data.List.Extras.Argmax
+import Data.List.Split (splitWhen)
+import Data.List.Extras.Argmax (argmax)
 
 import System.IO.Unsafe
 import Paths_spell
