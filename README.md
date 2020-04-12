@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/doersino/spell.svg?branch=master)](https://travis-ci.org/doersino/spell)
 
-Haskell implementation of the simple spelling corrector `spell.py` by [Peter Norvig](http://norvig.com), which he describes in detail [in the excellent essay "How to Write a Spelling Corrector"](http://norvig.com/spell-correct.html). Any credit should go to him!
+Haskell implementation (outlined in a [blog post](https://excessivelyadequate.com/posts/spell.html)) of the simple spelling corrector `spell.py` by [Peter Norvig](http://norvig.com), which he describes in detail [in the excellent essay "How to Write a Spelling Corrector"](http://norvig.com/spell-correct.html). Any credit should go to him!
 
 
 ## Setup
